@@ -1,0 +1,9 @@
+{
+    "python.linting.pylintEnabled": true,
+    "python.linting.enabled": true,
+    "python.linting.pylintArgs": ["--generate-members"],
+    "python.pythonPath": "~/.virtualenvs/robotvision-GS8BSsTj/bin/python",
+    "vim.handleKeys": {
+        "<C-w>": false 
+    }
+}
