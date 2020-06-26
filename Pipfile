@@ -9,6 +9,7 @@ opencv-python = "*"
 pyzbar = "*"
 pylint = "*"
 imutils = "*"
+matplotlib = "*"
 
 [dev-packages]
 
