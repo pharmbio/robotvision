@@ -5,11 +5,11 @@ name = "pypi"
 
 [packages]
 numpy = "*"
-opencv-python = "*"
 pyzbar = "*"
 pylint = "*"
 imutils = "*"
 matplotlib = "*"
+opencv-contrib-python = "*"
 
 [dev-packages]
 
