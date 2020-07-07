@@ -1,5 +1,6 @@
 import numpy as np
 import cv2
+import imutils
 
 cap = cv2.VideoCapture(0)
 
