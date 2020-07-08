@@ -1,7 +1,6 @@
 import numpy as np
 import matplotlib as mpl
 import matplotlib.pyplot as plt
-mpl.use("TkAgg")
 import cv2
 import imutils
 
@@ -19,12 +18,11 @@ gray = cv2.bilateralFilter(gray, 11, 17, 17)
 thr2 = cv2.adaptiveThreshold(gray, 255, cv2.ADAPTIVE_THRESH_MEAN_C, \
     cv2.THRESH_BINARY, 11, 8)
 
-
-
-
+# Contours
+cnts, hier = cv2.findContours(thr, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
 
 # Plotting
-plt.subplot(2,2,1), plt.imshow(orig)
+plt.subplot(2,2,1), plt.imshow(img)
 plt.subplot(2,2,2), plt.imshow(gray,    "gray")
 plt.subplot(2,2,3), plt.imshow(thr,     "gray")
 plt.subplot(2,2,4), plt.imshow(thr2,    "gray")
