@@ -3,6 +3,17 @@ import matplotlib.pyplot as plt
 import cv2
 import imutils
 
+def line_intersect(Ax1, Ay1, Ax2, Ay2, Bx1, By1, Bx2, By2):
+    """ returns a (x, y) tuple or None if there is no intersection """
+    d = (By2 - By1) * (Ax2 - Ax1) - (Bx2 - Bx1) * (Ay2 - Ay1)
+    if d:
+        uA = ((Bx2 - Bx1) * (Ay1 - By1) - (By2 - By1) * (Ax1 - Bx1)) / d
+        uB = ((Ax2 - Ax1) * (Ay1 - By1) - (Ay2 - Ay1) * (Ax1 - Bx1)) / d
+    x = Ax1 + uA * (Ax2 - Ax1)
+    y = Ay1 + uA * (Ay2 - Ay1)
+ 
+    return x, y
+
 def intersection(a1x, a1y, a2x, a2y, b1x, b1y, b2x, b2y):
     det = (b2y - b1y) * (a2x - a1x) - (b2x - b1x) * (a2y - a1y)
     if det:
@@ -14,9 +25,9 @@ def intersection(a1x, a1y, a2x, a2y, b1x, b1y, b2x, b2y):
         den = (a1x-a2x)*(b1y-b2y)-(a1y-a2y)*(b1x-b2x)
         u = num/den
     else:
-        return 0, 0
+        return
 
-    return a1x + t*(a2x-a1x), a1y + u*(a2y-a1y) 
+    return a1x + t*(a2x-a1x), a1y + t*(a2y-a1y) 
 
 
 # Open image and make copy of original
@@ -79,9 +90,12 @@ n = corner
 (a1y, a2y, b1y, b2y) = (ys[n-1], ys[n], ys[n+1], ys[n+2])
 
 p1, p2 = intersection(a1x, a1y, a2x, a2y, b1x, b1y, b2x, b2y)
-print(str(p1)+str(p2))
+q1, q2 = xs[n-2], ys[n-2]
 
-plt.plot(p1, p2, marker="o", linewidth=1, markersize=10)
+plt.plot(p1, p2, "o", linewidth=7, markersize=8)
+
+plt.plot([a1x, b2x], [a1y, b2y], linewidth=2)
+plt.plot([p1, q1], [p2, q2], linewidth=2)
 
 # Add Contours to images
 # cv2.drawContours(img, [cnt2], 0, (0,255,0), 9)
