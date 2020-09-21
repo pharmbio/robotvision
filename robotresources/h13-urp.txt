@@ -1,0 +1,89 @@
+<URProgram name="h13" installation="default" installationRelativePath="default" directory="/programs" createdIn="5.4.3.76201" lastSavedIn="5.4.3.76201" robotSerialNumber="20195001485" crcValue="1898262554">
+  <kinematics status="LINEARIZED" validChecksum="true">
+    <deltaTheta value="-8.844411260213857E-8, -0.032582961261549755, -0.8772929446404238, 0.9098787703504071, 2.101429764675086E-6, -1.9523604853220917E-7"/>
+    <a value="1.2280920183406098E-4, -0.6118328650166482, -0.35064142434212725, 6.353071874199852E-5, -8.491717228743712E-5, 0.0"/>
+    <d value="0.18107019996630838, -11.986107840354439, 254.02185121292118, -241.86139249326118, 0.11978728860232488, 0.11569307278026907"/>
+    <alpha value="1.570573614624119, 0.0016638537326948237, -0.0018631164519257151, 1.5706607381785331, -1.5704473543987978, 0.0"/>
+    <jointChecksum value="-1858852621, -1856465696, 659529794, -1323325273, -1859399821, -1861357583"/>
+  </kinematics>
+  <children>
+    <MainProgram runOnlyOnce="true" InitVariablesNode="false">
+      <children>
+        <Move motionType="MoveJ" speed="1.0471975511965976" acceleration="1.3962634015954636" useActiveTCP="true" positionType="CartesianPose">
+          <feature class="GeomFeatureReference" referencedName="Joint_0_name"/>
+          <children>
+            <Waypoint type="Fixed" name="Waypoint_1" kinematicsFlags="1">
+              <motionParameters/>
+              <position>
+                <JointAngles angles="1.9942498207092285, -1.6684614620604457, 1.9330504576312464, -0.2718423169902344, 1.3209004402160645, 0.0036344528198242188"/>
+                <TCPOffset pose="0.0, 0.0, 0.0, 0.0, 0.0, 0.0"/>
+                <Kinematics status="LINEARIZED" validChecksum="true">
+                  <deltaTheta value="-8.844411260213857E-8, -0.032582961261549755, -0.8772929446404238, 0.9098787703504071, 2.101429764675086E-6, -1.9523604853220917E-7"/>
+                  <a value="1.2280920183406098E-4, -0.6118328650166482, -0.35064142434212725, 6.353071874199852E-5, -8.491717228743712E-5, 0.0"/>
+                  <d value="0.18107019996630838, -11.986107840354439, 254.02185121292118, -241.86139249326118, 0.11978728860232488, 0.11569307278026907"/>
+                  <alpha value="1.570573614624119, 0.0016638537326948237, -0.0018631164519257151, 1.5706607381785331, -1.5704473543987978, 0.0"/>
+                  <jointChecksum value="-1858852621, -1856465696, 659529794, -1323325273, -1859399821, -1861357583"/>
+                </Kinematics>
+              </position>
+              <BaseToFeature pose="0.0, 0.0, 0.0, 0.0, 0.0, 0.0"/>
+            </Waypoint>
+            <Contributed strategyClass="com.robotiq.urcap.gripper.GripperNode" strategyProgramNodeType="Gripper" strategyURCapDeveloper="Robotiq Inc." strategyURCapName="Robotiq_Grippers">
+              <dataModel>
+                <data key="position" value="0.0"/>
+                <data key="force" value="0.0"/>
+                <data key="speed" value="0.0"/>
+                <data key="positionInDouble" value="0.0"/>
+                <data key="forceInDouble" value="0.0"/>
+                <data key="speedInDouble" value="0.0"/>
+                <data key="slaveIds" value="[9]"/>
+                <data key="blocking" value="true"/>
+              </dataModel>
+            </Contributed>
+            <Waypoint type="Fixed" name="Waypoint_2" kinematicsFlags="1">
+              <motionParameters/>
+              <position>
+                <JointAngles angles="2.0609846115112305, -1.3941953939250489, 1.642984692250387, -0.2561243337443848, 1.387566089630127, 0.0035986900329589844"/>
+                <TCPOffset pose="0.0, 0.0, 0.0, 0.0, 0.0, 0.0"/>
+                <Kinematics status="LINEARIZED" validChecksum="true">
+                  <deltaTheta value="-8.844411260213857E-8, -0.032582961261549755, -0.8772929446404238, 0.9098787703504071, 2.101429764675086E-6, -1.9523604853220917E-7"/>
+                  <a value="1.2280920183406098E-4, -0.6118328650166482, -0.35064142434212725, 6.353071874199852E-5, -8.491717228743712E-5, 0.0"/>
+                  <d value="0.18107019996630838, -11.986107840354439, 254.02185121292118, -241.86139249326118, 0.11978728860232488, 0.11569307278026907"/>
+                  <alpha value="1.570573614624119, 0.0016638537326948237, -0.0018631164519257151, 1.5706607381785331, -1.5704473543987978, 0.0"/>
+                  <jointChecksum value="-1858852621, -1856465696, 659529794, -1323325273, -1859399821, -1861357583"/>
+                </Kinematics>
+              </position>
+              <BaseToFeature pose="0.0, 0.0, 0.0, 0.0, 0.0, 0.0"/>
+            </Waypoint>
+            <Contributed strategyClass="com.robotiq.urcap.gripper.GripperNode" strategyProgramNodeType="Gripper" strategyURCapDeveloper="Robotiq Inc." strategyURCapName="Robotiq_Grippers">
+              <dataModel>
+                <data key="position" value="100.0"/>
+                <data key="force" value="0.0"/>
+                <data key="speed" value="0.0"/>
+                <data key="positionInDouble" value="100.0"/>
+                <data key="forceInDouble" value="0.0"/>
+                <data key="speedInDouble" value="0.0"/>
+                <data key="slaveIds" value="[9]"/>
+                <data key="blocking" value="true"/>
+              </dataModel>
+            </Contributed>
+            <Waypoint type="Fixed" name="Waypoint_1" kinematicsFlags="1">
+              <motionParameters/>
+              <position>
+                <JointAngles angles="1.9942498207092285, -1.6684614620604457, 1.9330504576312464, -0.2718423169902344, 1.3209004402160645, 0.0036344528198242188"/>
+                <TCPOffset pose="0.0, 0.0, 0.0, 0.0, 0.0, 0.0"/>
+                <Kinematics status="LINEARIZED" validChecksum="true">
+                  <deltaTheta value="-8.844411260213857E-8, -0.032582961261549755, -0.8772929446404238, 0.9098787703504071, 2.101429764675086E-6, -1.9523604853220917E-7"/>
+                  <a value="1.2280920183406098E-4, -0.6118328650166482, -0.35064142434212725, 6.353071874199852E-5, -8.491717228743712E-5, 0.0"/>
+                  <d value="0.18107019996630838, -11.986107840354439, 254.02185121292118, -241.86139249326118, 0.11978728860232488, 0.11569307278026907"/>
+                  <alpha value="1.570573614624119, 0.0016638537326948237, -0.0018631164519257151, 1.5706607381785331, -1.5704473543987978, 0.0"/>
+                  <jointChecksum value="-1858852621, -1856465696, 659529794, -1323325273, -1859399821, -1861357583"/>
+                </Kinematics>
+              </position>
+              <BaseToFeature pose="0.0, 0.0, 0.0, 0.0, 0.0, 0.0"/>
+            </Waypoint>
+          </children>
+        </Move>
+      </children>
+    </MainProgram>
+  </children>
+</URProgram>

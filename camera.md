@@ -29,10 +29,6 @@
 - Requires lense
 - [Purchase link](https://www.edmundoptics.com/p/allied-vision-alvium-1800-u-500c-125-50mp-cs-mount-right-angle-usb-31-color-camera/42334/) - 325$
 
-
-
-
-
 # Vendors
 - https://www.edmundoptics.com/
 - https://www.rmaelectronics.com/
