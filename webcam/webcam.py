@@ -45,7 +45,7 @@ def nothing(x):
     pass
 
 
-# "Main" function below
+# Main function below
 
 src = cv2.VideoCapture(0)
 

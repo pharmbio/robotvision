@@ -4,12 +4,9 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-numpy = "*"
-pyzbar = "*"
-pylint = "*"
-imutils = "*"
-matplotlib = "*"
 opencv-contrib-python = "*"
+pyzbar = "*"
+imutils = "*"
 
 [dev-packages]
 
