@@ -1,3 +1,5 @@
+import sys
+sys.path.append("/home/rikard/.pyenv/versions/3.9.0/lib/python3.9/site-packages/pyrealsense2")
 import pyrealsense2 as rs
 
 pipeline = rs.pipeline()

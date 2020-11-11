@@ -1,6 +1,8 @@
 from flask import Flask
 app = Flask(__name__)
 
+print("/ /hello /user/<username> /post/<int:post_id> /path/<path:subpath>")
+
 @app.route('/')
 def index():
     return 'Index Page'
