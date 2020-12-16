@@ -1,0 +1,15 @@
+CODE39
+ITF
+2of5 (Industrial 2of5)
+COOP 2of5
+NW-7 (Codabar)
+CODE128
+GS1-128
+GS1 DataBar
+CODE93
+JAN/EAN/UPC
+Trioptic CODE39
+CODE39 Full ASCII
+Pharmacode
+
+EAN8? CODE128?
