@@ -12,3 +12,6 @@ pyzbar = "*"
 
 [requires]
 python_version = "3.9"
+
+[packages.pylibdmtx]
+extras = [ "scripts",]

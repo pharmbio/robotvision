@@ -5,6 +5,10 @@
 ##      Open CV and Numpy integration        ##
 ###############################################
 
+import sys
+# Add RealSense library path:
+sys.path.append("/home/rikard/.pyenv/versions/3.9.0/lib/python3.9/site-packages/pyrealsense2")
+
 import pyrealsense2 as rs
 import numpy as np
 import cv2

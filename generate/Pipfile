@@ -5,7 +5,8 @@ name = "pypi"
 
 [packages]
 qrcode = "*"
-pillow = "*"
+Pillow = "*"
+treepoem = "*"
 
 [dev-packages]
 
