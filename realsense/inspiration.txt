@@ -1,0 +1,69 @@
+import numpy as np
+import cv2
+
+image = cv2.imread("barcode.jpg")
+gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+
+# equalize lighting
+clahe = cv2.createCLAHE(clipLimit=2.0, tileGridSize=(8,8))
+gray = clahe.apply(gray)
+
+# edge enhancement
+edge_enh = cv2.Laplacian(gray, ddepth = cv2.CV_8U, 
+                         ksize = 3, scale = 1, delta = 0)
+cv2.imshow("Edges", edge_enh)
+cv2.waitKey(0)
+retval = cv2.imwrite("edge_enh.jpg", edge_enh)
+
+# bilateral blur, which keeps edges
+blurred = cv2.bilateralFilter(edge_enh, 13, 50, 50)
+
+# use simple thresholding. adaptive thresholding might be more robust
+(_, thresh) = cv2.threshold(blurred, 55, 255, cv2.THRESH_BINARY)
+cv2.imshow("Thresholded", thresh)
+cv2.waitKey(0)
+retval = cv2.imwrite("thresh.jpg", thresh)
+
+# do some morphology to isolate just the barcode blob
+kernel = cv2.getStructuringElement(cv2.MORPH_RECT, (9, 9))
+closed = cv2.morphologyEx(thresh, cv2.MORPH_CLOSE, kernel)
+closed = cv2.erode(closed, None, iterations = 4)
+closed = cv2.dilate(closed, None, iterations = 4)
+cv2.imshow("After morphology", closed)
+cv2.waitKey(0)
+retval = cv2.imwrite("closed.jpg", closed)
+
+# find contours left in the image
+(_, cnts, _) = cv2.findContours(closed.copy(), cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+c = sorted(cnts, key = cv2.contourArea, reverse = True)[0]
+rect = cv2.minAreaRect(c)
+box = np.int0(cv2.boxPoints(rect))
+cv2.drawContours(image, [box], -1, (0, 255, 0), 3)
+print(box)
+cv2.imshow("found barcode", image)
+cv2.waitKey(0)
+retval = cv2.imwrite("found.jpg", image)
+
+
+let src = cv.imread('canvasInput');
+let dst = new cv.Mat();
+let dsize = new cv.Size(src.rows, src.cols);
+// (data32F[0], data32F[1]) is the first point
+// (data32F[2], data32F[3]) is the sescond point
+// (data32F[4], data32F[5]) is the third point
+// (data32F[6], data32F[7]) is the fourth point
+let srcTri = cv.matFromArray(4, 1, cv.CV_32FC2, [56, 65, 368, 52, 28, 387, 389, 390]);
+let dstTri = cv.matFromArray(4, 1, cv.CV_32FC2, [0, 0, 300, 0, 0, 300, 300, 300]);
+let M = cv.getPerspectiveTransform(srcTri, dstTri);
+// You can try more different parameters
+cv.warpPerspective(src, dst, M, dsize, cv.INTER_LINEAR, cv.BORDER_CONSTANT, new cv.Scalar());
+cv.imshow('canvasOutput', dst);
+src.delete(); dst.delete(); M.delete(); srcTri.delete(); dstTri.delete();
+
+
+
+
+
+
+
+
