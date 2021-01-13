@@ -7,18 +7,19 @@ from pyzbar import pyzbar
 # ap.add_argument("-i", "--image", required=True, help="path to image file")
 # args = vars(ap.parse_args())
 # image = cv2.imread(args["image"])
-image0 = cv2.imread("1144312.png")
-image1 = cv2.imread("3939255.png")
-image2 = cv2.imread("4302755.png")
-image3 = cv2.imread("8943906.png")
+image0 = cv2.imread("code39.png")
+image1 = cv2.imread("code128.png")
+image2 = cv2.imread("datamatrixrectangular.png")
+image3 = cv2.imread("qrcode.png")
 
-first = np.concatenate((image0, image1), axis=0)
-second= np.concatenate((image2, image3), axis=0)
+# first = np.concatenate((image0, image1), axis=0)
+# second= np.concatenate((image2, image3), axis=0)
 
-image = np.concatenate((first, second), axis=0)
+# image = np.concatenate((first, second), axis=0)
 
-image = cv2.GaussianBlur(image,(23, 23),0)
+# image = cv2.GaussianBlur(image,(23, 23),0)
 
+image = image2
 
 barcodes = pyzbar.decode(image)
 
