@@ -12,7 +12,7 @@ A combination of competent hardware and a robust software stack provide a solid 
 - [ ] Network (Anders)
 - [ ] M8 cable [extension](https://se.rs-online.com/web/p/industrial-automation-cable-assemblies/8582777) for power (Anders)
 - [ ] 3A car [charger](https://www.atea.se/eshop/product/estuff-stromadapter-for-bil/?prodid=2053528) ([Produktwebben](https://produktwebb.uu.se/inkop/W2ProductCatalog.aspx?prodId=9506694)) (Anders)
-- [?] USB-C => USB-C power [cable](https://www.kopplat.se/Produkt/10222/USB-20-kabel-C-hane-till-C-hane-svart-05-meter) (Rikard)
+- [ ] USB-C => USB-C power [cable](https://www.kopplat.se/Produkt/10222/USB-20-kabel-C-hane-till-C-hane-svart-05-meter) (Rikard)
 
 ## Installation
 ## Usage
