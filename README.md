@@ -10,7 +10,7 @@ A combination of competent hardware and a robust software stack provide a solid 
 - [x] USB-C => USB-A 5Gbps [cable](https://noerdic.se/collections/adapter-usbc/products/type-c-to-usb-a-31-5gbps-3a-15cm-black-usbc-n1030)
 - [x] 3D printed mount
 - [ ] Network (Anders)
-- [ ] M8 cable [extension](https://se.rs-online.com/web/p/industrial-automation-cable-assemblies/8582777) for power (Anders)
+- [x] M8 cable [extension](https://se.rs-online.com/web/p/industrial-automation-cable-assemblies/8582777) for power (Anders)
 - [ ] 3A car [charger](https://www.atea.se/eshop/product/estuff-stromadapter-for-bil/?prodid=2053528) ([Produktwebben](https://produktwebb.uu.se/inkop/W2ProductCatalog.aspx?prodId=9506694)) (Anders)
 - [ ] USB-C => USB-C power [cable](https://www.kopplat.se/Produkt/10222/USB-20-kabel-C-hane-till-C-hane-svart-05-meter) (Rikard)
 
