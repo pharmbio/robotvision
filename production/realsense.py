@@ -6,8 +6,8 @@ import numpy as np
 import cv2
 
 framerate = 30
-width = 1920
-height = 1080
+width = 1280
+height = 720
 
 pipeline = rs.pipeline()
 config = rs.config()

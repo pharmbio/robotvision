@@ -1,7 +1,6 @@
 from flask import Flask, Response, render_template
-from realsense import Livefeed
-
-# Flask livefeed using Motion JPEG 
+from realsense import Livefeed 
+from scanner import Barcode
 
 server = Flask(__name__)
 print("hello")
@@ -10,6 +9,7 @@ print("hello")
 def index():
     return render_template('index.html')
 
+# Flask livefeed using Motion JPEG 
 def generate(camera):
     while True:
         frame = camera.get_frame()
@@ -19,6 +19,11 @@ def generate(camera):
 @server.route('/livefeed')
 def livefeed():
     return Response(generate(Livefeed()), mimetype='multipart/x-mixed-replace; boundary=frame')
+
+# Read most central barcode and return value
+@server.route('/read_barcode')
+def read_barcode():
+    return Response(ReadBarcode())
 
 if __name__ == "__main__":
     server.run(debug=True)
