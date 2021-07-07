@@ -1,6 +1,6 @@
-import sys
+# import sys
 # Add RealSense library path:
-sys.path.append("/home/rikard/.pyenv/versions/3.9.0/lib/python3.9/site-packages/pyrealsense2")
+# sys.path.append("/home/rikard/.pyenv/versions/3.9.0/lib/python3.9/site-packages/pyrealsense2")
 import pyrealsense2 as rs
 import numpy as np
 import cv2
@@ -34,10 +34,12 @@ class Barcode(object):
     def stop(self):
         pipeline.stop()
     
-    def read(self):
+    def read():
         try:
             for t in range(30):
+                print(t)
                 frame = pipeline.wait_for_frames()
+                print("hello")
                 color_frame = frame.get_color_frame()
                 if not color_frame:
                     continue
@@ -102,3 +104,5 @@ class Barcode(object):
                         result = (barcodeData, barcodeType)
 
                 return result
+        except:
+            return "Something went wrong..."
