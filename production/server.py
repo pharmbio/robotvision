@@ -47,14 +47,16 @@ config.enable_stream(rs.stream.color, width, height, rs.format.bgr8, framerate)
 def pyth(vector):
     return np.sqrt(vector[0]**2 + vector[1]**2)
 
+
 # Read most central barcode and return value
-@server.route('/read_barcode')
-def read_barcode():
+@server.route('/read_barcode', defaults={'t': 1})
+@server.route('/read_barcode/<t>')
+def read_barcode(t):
     pipeline.start(config)
     barcodeList = []
-    for t in range(30):
+    for i in range(int(t)):
         try:
-            print(t, end=' ', flush=True)
+            print(i, end=' ', flush=True)
             frame = pipeline.wait_for_frames()
             color_frame = frame.get_color_frame()
             if not color_frame:
@@ -104,7 +106,6 @@ def read_barcode():
             focusW, focusH = 500, 150
 
             focus = gray[int(yMid-focusH/2):int(yMid+focusH/2), int(xMid-focusW/2):int(xMid+focusW/2)]
-            cv2.imwrite("temp.png", focus)
 
             barcodes = pyzbar.decode(focus)
 
