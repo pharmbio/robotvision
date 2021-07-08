@@ -1,11 +1,11 @@
-import sys
+# import sys
 # Add RealSense library path:
-sys.path.append("/home/rikard/.pyenv/versions/3.9.0/lib/python3.9/site-packages/pyrealsense2")
+# sys.path.append("/home/rikard/.pyenv/versions/3.9.0/lib/python3.9/site-packages/pyrealsense2")
 import pyrealsense2 as rs
 import numpy as np
 import cv2
 
-framerate = 30
+framerate = 6
 width = 1280
 height = 720
 
