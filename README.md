@@ -34,15 +34,15 @@ Controlling the camera and processing the captured image data is a _Raspberry Pi
 This microcomputer is powerful enough to perform image processing and hosting a small web server through which quality control data can be communicated to external systems.
 
 <p align="center">
-<img width="49%" height="49%" src="./images/camera.png">
-<img width="49%" height="49%" src="./images/pi1.png">
+<img width="49%" height="49%" src="./images/camera_transparent.png">
+<img width="49%" height="49%" src="./images/pi1_transparent.png">
 </p>
 
 The camera and RPi are mounted together in a case, attached to the gripper of the _UR10e_ robot arm with a 3D-printed mount. 
 The 5V power required by the RPi is supplied by splicing the gripper power cable and separating its 24V and ground leads, after which the voltage is stepped down using a car charger/buck converter.
 
 <p align="center">
-<img width="47%" src="./images/cable.png">
+<img width="47%" src="./images/cable_transparent.png">
 <img width="51%" src="./images/circuit.png">
 </p>
 
