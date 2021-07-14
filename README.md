@@ -1,7 +1,7 @@
 # Robotvision - A Machine Vision System for the Automated Lab
 
 <p align="center">
-<img width="60%" height="60%" src="./images/title.png">
+<img width="60%" height="60%" src="./images/title_transparent.png">
 </p>
 
 Extended Master's thesis project with the goal of developing a complete machine vision system for the _UR10e_-based automated biological lab. 
