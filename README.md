@@ -9,7 +9,45 @@ A combination of competent hardware and a robust software stack provide a solid 
 
 ## Installation
 
+This project is designed to run on a Raspberry Pi 4, a device based on the ARM architecture. This means some adjustments are required before porting "regular" x86 code to the platform.
+
+Most importantly, _pyrealsense2_, the python wrapper for the RealSense camera SDK needs to be built from source for ARM. All python packages are installed globally on the RPi instead of using a virtual environment.
+
+All other dependencies are specified in the _requirements.txt_-file, and can be installed by
+
+    pip install --requirements=requirements.txt
+
 ## Usage
+
+The Flask server responsible for exposing internal methods is started by running
+
+    python server.py
+
+A startup script on the RPi takes care of this whenever the device reboots. This means the web server should always be running on adress _10.10.0.254:5000_. 
+
+Once the service is running, camera requests can be made to the same IP declaring intention with a different endpoint:
+
+### Barcode reading
+Barcode recognition and decoding is done by sending a request to 
+
+    10.10.0.254:5000/read_barcode
+The endpoint returns the decoded information from the most central barcode in the cameras view, along with the particular barcode type.
+
+The request can be modified to perform several image captures and computations, increasing the probability of reading the sought-after barcode correctly. This is done by adding another parameter:
+
+    10.10.0.254:5000/read_barcode/<t>
+Increasing _t_ increases the computation time since the request is repeated _t_ number of times before returning a result.
+
+### Livefeed
+To see what the vision system is currently viewing, visit the root index
+
+    10.10.0.254:5000/
+or
+
+    10.10.0.254:5000/livefeed
+
+in any browser. The system will capture 8 frames per second and update the content of the html continuously. 
+
 
 ## Repository overview
 
