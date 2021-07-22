@@ -15,7 +15,7 @@ Most importantly, _pyrealsense2_, the python wrapper for the RealSense camera SD
 
 All other dependencies are specified in the _requirements.txt_-file, and can be installed by
 
-    pip install --requirements=requirements.txt
+    pip install --requirement=requirements.txt
 
 ## Usage
 
